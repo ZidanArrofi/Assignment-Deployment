@@ -12,7 +12,7 @@ const EditPhoto = () => {
 
   const editPhoto = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:3001/photos/${id}`, {
+    await fetch(` https://gallery-app-server.vercel.app/photos/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const EditPhoto = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3001/photos/${id}`)
+    fetch(` https://gallery-app-server.vercel.app/photos/${id}`)
     .then((response) => response.json())
     .then((json) => {
         setCaptions(json.captions)
